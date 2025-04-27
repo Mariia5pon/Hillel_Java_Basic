@@ -1,4 +1,4 @@
-package lectures;
+package com.gmail.ponomarenko.lectures;
 
 public class Lecture01 {
     public static void main(String [] args) {            // psvm + Tab = main method, точка входу (JUST ONE FOR A CLASS)
