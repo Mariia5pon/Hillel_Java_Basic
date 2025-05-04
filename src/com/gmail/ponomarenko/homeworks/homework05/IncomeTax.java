@@ -1,8 +1,11 @@
 package homeworks.homework05;
+import java.util.Scanner;
 
 public class IncomeTax {
     public static void main(String[] args) {
-        int income = 10001;
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("Enter your income:");
+        double income = myObj.nextDouble();
         double incomeTax = 0.0;
 
         if (income <= 10000) {
@@ -13,7 +16,7 @@ public class IncomeTax {
             incomeTax = (income * 0.067);
         }
 
-        System.out.println(incomeTax);
+        System.out.printf("Calculated tax amount based on the entered income: %.2f", incomeTax);
     }
 
 }
