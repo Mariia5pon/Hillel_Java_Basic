@@ -1,4 +1,4 @@
-package homeworks.homework04;
+package com.gmail.ponomarenko.homeworks.homework04;
 
 /*
 Copy code
