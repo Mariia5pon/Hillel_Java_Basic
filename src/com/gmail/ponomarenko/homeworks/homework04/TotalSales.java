@@ -1,4 +1,6 @@
-package homeworks.homework04;
+package com.gmail.ponomarenko.homeworks.homework04;
+
+import java.util.Scanner;
 
 /*
 Copy code
@@ -31,4 +33,5 @@ public class TotalSales {
         System.out.printf("total sales for %d days is EUR %.2f,\n", days, totalSales);
         System.out.printf("sales by day is EUR %.2f \n", salesByDay);
     }
+
 }
