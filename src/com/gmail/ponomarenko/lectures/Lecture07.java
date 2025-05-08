@@ -14,13 +14,32 @@ public class Lecture07 {
         System.out.println("Average temperature == " + average);
          */
 
-        int[] temperatures = new int[3];
+        int[] temperatures = new int[5];
         temperatures[0] = 3;
         temperatures[1] = 12;
         temperatures[2] = 10;
+        temperatures[3] = 13;
+        temperatures[4] = 15;
 
-        int average = (temperatures[0] + temperatures[1] + temperatures[2] / temperatures.length);
+        int[] previousTemperatures = new int[100];
 
-        System.out.println("Average temperature ==" + average);
+        print(previousTemperatures); // [0, 0, 0, ... 0]
+        print(temperatures);
+        long sum = 0;
+        for (int i=0; i < temperatures.length; i++){
+            sum += temperatures[i];
+        }
+
+        //int average = (temperatures[0] + temperatures[1] + temperatures[2] / temperatures.length);
+        int average = (int) (sum / temperatures.length);
+        System.out.println("Average temperature == " + average);
+    }
+
+    public static void print(int[] temperatures) {
+        System.out.print("Temperatures: [");
+        for (int i = 0; i < temperatures.length; i++) {
+            System.out.print(temperatures[i] + ", ");
+        }
+        System.out.print("]\n");
     }
 }
