@@ -1,4 +1,4 @@
-package homeworks.homework05;
+package com.gmail.ponomarenko.homeworks.homework05;
 
 public class IncomeTax {
     public static void main(String[] args) {
