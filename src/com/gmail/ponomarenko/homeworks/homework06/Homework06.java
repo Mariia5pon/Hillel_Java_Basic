@@ -7,8 +7,9 @@ public class Homework06 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number of rows: ");
         int numberOfRows = scanner.nextInt();
-        // forMethod(numberOfRows);
+        forMethod(numberOfRows);
         whileMethod(numberOfRows);
+        doWhileMethod(numberOfRows);
     }
 
     public static void forMethod(int numberOfRows) {
@@ -34,6 +35,22 @@ public class Homework06 {
                 System.out.printf("%d) Num is %d, sum is %d \n", step, step, sum);
                 step++;
             }
+            System.out.println("------------------------");
+            System.out.printf("Sum of numbers is %d", sum);
+        } else {
+            System.out.printf("Sum of numbers is %d", sum);
+        }
+    }
+
+    public static void doWhileMethod(int numberOfRows) {
+        int step = 1;
+        int sum = 0;
+        if (numberOfRows > 0) {
+            do {
+                sum += step;
+                System.out.printf("%d) Num is %d, sum is %d \n", step, step, sum);
+                step++;
+            } while (step <= numberOfRows);
             System.out.println("------------------------");
             System.out.printf("Sum of numbers is %d", sum);
         } else {
