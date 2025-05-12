@@ -13,6 +13,7 @@ public class Homework06 {
     }
 
     public static void forMethod(int numberOfRows) {
+        System.out.println("--= FOR LOOP =--");
         int sum = 0;
         if (numberOfRows > 0) {
             for (int i = 1; i <= numberOfRows; i++) {
@@ -27,6 +28,7 @@ public class Homework06 {
     }
 
     public static void whileMethod(int numberOfRows) {
+        System.out.println("--= WHILE LOOP =--");
         int step = 1;
         int sum = 0;
         if (numberOfRows > 0) {
@@ -43,6 +45,7 @@ public class Homework06 {
     }
 
     public static void doWhileMethod(int numberOfRows) {
+        System.out.println("--= DO-WHILE LOOP =--");
         int step = 1;
         int sum = 0;
         if (numberOfRows > 0) {
