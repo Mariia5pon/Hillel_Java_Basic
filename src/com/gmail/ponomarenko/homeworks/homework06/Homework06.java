@@ -15,33 +15,25 @@ public class Homework06 {
     public static void forMethod(int numberOfRows) {
         System.out.println("--= FOR LOOP =--");
         int sum = 0;
-        if (numberOfRows > 0) {
-            for (int i = 1; i <= numberOfRows; i++) {
-                sum += i;
-                System.out.printf("%d) Num is %d, sum is %d \n", i, i, sum);
-            }
-            System.out.println("------------------------");
-            System.out.printf("Sum of numbers is %d", sum);
-        } else {
-            System.out.printf("Sum of numbers is %d", sum);
+        for (int i = 1; i <= numberOfRows; i++) {
+            sum += i;
+            System.out.printf("%d) Num is %d, sum is %d \n", i, i, sum);
         }
+        System.out.println("------------------------");
+        System.out.printf("Sum of numbers is %d \n", sum);
     }
 
     public static void whileMethod(int numberOfRows) {
         System.out.println("--= WHILE LOOP =--");
         int step = 1;
         int sum = 0;
-        if (numberOfRows > 0) {
-            while (step <= numberOfRows) {
-                sum += step;
-                System.out.printf("%d) Num is %d, sum is %d \n", step, step, sum);
-                step++;
-            }
-            System.out.println("------------------------");
-            System.out.printf("Sum of numbers is %d", sum);
-        } else {
-            System.out.printf("Sum of numbers is %d", sum);
+        while (step <= numberOfRows) {
+            sum += step;
+            System.out.printf("%d) Num is %d, sum is %d \n", step, step, sum);
+            step++;
         }
+        System.out.println("------------------------");
+        System.out.printf("Sum of numbers is %d \n", sum);
     }
 
     public static void doWhileMethod(int numberOfRows) {
@@ -54,11 +46,9 @@ public class Homework06 {
                 System.out.printf("%d) Num is %d, sum is %d \n", step, step, sum);
                 step++;
             } while (step <= numberOfRows);
-            System.out.println("------------------------");
-            System.out.printf("Sum of numbers is %d", sum);
-        } else {
-            System.out.printf("Sum of numbers is %d", sum);
         }
+        System.out.println("------------------------");
+        System.out.printf("Sum of numbers is %d", sum);
     }
 }
 
