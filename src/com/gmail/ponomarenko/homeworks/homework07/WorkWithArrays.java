@@ -1,12 +1,14 @@
 package com.gmail.ponomarenko.homeworks.homework07;
 
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class WorkWithArrays {
     public static void main(String[] args) {
         int numberOfIntegers = getNumberOfIntegers();
-        random(numberOfIntegers);
+        int[] arrayOfIntegers = random(numberOfIntegers);
+        System.out.println("Elements of the array: " + Arrays.toString(arrayOfIntegers));
     }
 
     private static int getNumberOfIntegers() {
@@ -22,12 +24,12 @@ public class WorkWithArrays {
         return numberOfIntegers;
     }
 
-    public static void random(int count) {
+    public static int[] random(int count) {
         int[] array = new int[count];
         for (int i = 0; i < array.length; i++) {
             array[i] = ThreadLocalRandom.current().nextInt(-100, 100);
-            System.out.println(array[i]);
         }
+        return array;
     }
 
     public static void sumOfNegativeNumbers() {
