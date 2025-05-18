@@ -7,8 +7,10 @@ import java.util.concurrent.ThreadLocalRandom;
 public class WorkWithArrays {
     public static void main(String[] args) {
         int numberOfIntegers = getNumberOfIntegers();
-        int[] arrayOfIntegers = random(numberOfIntegers);
+        int[] arrayOfIntegers = createRandomArray(numberOfIntegers);
         System.out.println("Elements of the array: " + Arrays.toString(arrayOfIntegers));
+        int sumOfNegativeNumbers = getSumOfNegativeNumbers(arrayOfIntegers);
+        System.out.println("Sum of negative numbers: " + sumOfNegativeNumbers);
     }
 
     private static int getNumberOfIntegers() {
@@ -24,7 +26,7 @@ public class WorkWithArrays {
         return numberOfIntegers;
     }
 
-    public static int[] random(int count) {
+    public static int[] createRandomArray(int count) {
         int[] array = new int[count];
         for (int i = 0; i < array.length; i++) {
             array[i] = ThreadLocalRandom.current().nextInt(-100, 100);
@@ -32,7 +34,13 @@ public class WorkWithArrays {
         return array;
     }
 
-    public static void sumOfNegativeNumbers() {
-
+    public static int getSumOfNegativeNumbers(int[] array) {
+        int sum = 0;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] < 0) {
+                sum += array[i];
+            }
+        }
+        return sum;
     }
 }
