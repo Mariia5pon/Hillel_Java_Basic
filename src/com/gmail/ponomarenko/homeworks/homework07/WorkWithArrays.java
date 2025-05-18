@@ -11,6 +11,10 @@ public class WorkWithArrays {
         System.out.println("Elements of the array: " + Arrays.toString(arrayOfIntegers));
         int sumOfNegativeNumbers = getSumOfNegativeNumbers(arrayOfIntegers);
         System.out.println("Sum of negative numbers: " + sumOfNegativeNumbers);
+        int countOfEvenNumbers = countTheNumberOfEvenNumbers(arrayOfIntegers);
+        int countOfOddNumbers = numberOfIntegers - countOfEvenNumbers;
+        System.out.println("Count of even numbers: " + countOfEvenNumbers);
+        System.out.println("Count of odd numbers: " + countOfOddNumbers);
     }
 
     private static int getNumberOfIntegers() {
@@ -42,5 +46,15 @@ public class WorkWithArrays {
             }
         }
         return sum;
+    }
+
+    public static int countTheNumberOfEvenNumbers(int[] array) {
+        int countOfEvenNumbers = 0;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] % 2 == 0) {
+                countOfEvenNumbers++;
+            }
+        }
+        return countOfEvenNumbers;
     }
 }
