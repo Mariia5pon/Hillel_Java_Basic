@@ -103,9 +103,9 @@ public class WorkWithArrays {
     }
 
     public static void getAverageAfterFirstNegative(int[] array, int index) {
-        double sum = 0;
-        int count = 0;
         if (index >= 0) {
+            double sum = 0;
+            int count = 0;
             for (int i = index + 1; i < array.length; i++) {
                 sum += array[i];
                 count++;
