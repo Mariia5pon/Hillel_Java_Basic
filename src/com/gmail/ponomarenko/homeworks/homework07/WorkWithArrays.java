@@ -25,6 +25,9 @@ public class WorkWithArrays {
         int indexOfTheSmallestElement = getTheIndexOfTheSmallestElement(arrayOfIntegers);
         int smallestElement = arrayOfIntegers[indexOfTheSmallestElement];
         System.out.printf("Smallest element: %d (with index %d) \n", smallestElement, indexOfTheSmallestElement);
+
+        int indexOfFirstNegative = getIndexOfFirstNegative(arrayOfIntegers);
+        getAverageAfterFirstNegative(arrayOfIntegers, indexOfFirstNegative);
     }
 
     private static int getNumberOfIntegers() {
@@ -86,5 +89,34 @@ public class WorkWithArrays {
             }
         }
         return indexOfSmallestElement;
+    }
+
+    public static int getIndexOfFirstNegative(int[] array) {
+        int indexOfFirstNegative = -1;
+        int i = 0;
+
+        while (i < array.length) {
+            if (array[i] < 0) {
+                indexOfFirstNegative = i;
+                break;
+            }
+            i++;
+        }
+        return indexOfFirstNegative;
+    }
+
+    public static void getAverageAfterFirstNegative(int[] array, int index) {
+        double sum = 0;
+        int count = 0;
+        if (index >= 0) {
+            for (int i = index + 1; i < array.length; i++) {
+                sum += array[i];
+                count++;
+            }
+            double average = sum / count;
+            System.out.println("The average of the numbers after the first negative number: " + average);
+        } else {
+            System.out.println("No negative numbers were found.");
+        }
     }
 }
