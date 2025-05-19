@@ -6,41 +6,41 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class WorkWithArrays {
     public static void main(String[] args) {
-        int numberOfIntegers = getNumberOfIntegers();
-        int[] arrayOfIntegers = createRandomArray(numberOfIntegers);
-        System.out.println("Elements of the array: " + Arrays.toString(arrayOfIntegers));
+        int size = getSize();
+        int[] array = createRandomArray(size);
+        System.out.println("Elements of the array: " + Arrays.toString(array));
 
-        int sumOfNegativeNumbers = getSumOfNegativeNumbers(arrayOfIntegers);
-        System.out.println("Sum of negative numbers: " + sumOfNegativeNumbers);
+        int negativeSum = getNegativeSum(array);
+        System.out.println("Sum of negative numbers: " + negativeSum);
 
-        int countOfEvenNumbers = countTheNumberOfEvenNumbers(arrayOfIntegers);
-        int countOfOddNumbers = numberOfIntegers - countOfEvenNumbers;
-        System.out.println("Count of even numbers: " + countOfEvenNumbers);
-        System.out.println("Count of odd numbers: " + countOfOddNumbers);
+        int evenCount = getEvenCount(array);
+        int oddCount = size - evenCount;
+        System.out.println("Count of even numbers: " + evenCount);
+        System.out.println("Count of odd numbers: " + oddCount);
 
-        int indexOfTheLargestElement = getTheIndexOfTheLargestElement(arrayOfIntegers);
-        int largestElement = arrayOfIntegers[indexOfTheLargestElement];
-        System.out.printf("Largest element: %d (with index %d) \n", largestElement, indexOfTheLargestElement);
+        int maxIndex = getMaxIndex(array);
+        int max = array[maxIndex];
+        System.out.printf("Largest element: %d (with index %d) \n", max, maxIndex);
 
-        int indexOfTheSmallestElement = getTheIndexOfTheSmallestElement(arrayOfIntegers);
-        int smallestElement = arrayOfIntegers[indexOfTheSmallestElement];
-        System.out.printf("Smallest element: %d (with index %d) \n", smallestElement, indexOfTheSmallestElement);
+        int minIndex = getMinIndex(array);
+        int min = array[minIndex];
+        System.out.printf("Smallest element: %d (with index %d) \n", min, minIndex);
 
-        int indexOfFirstNegative = getIndexOfFirstNegative(arrayOfIntegers);
-        getAverageAfterFirstNegative(arrayOfIntegers, indexOfFirstNegative);
+        int firstNegativeIndex = getFirstNegativeIndex(array);
+        getAverageAfterFirstNegative(array, firstNegativeIndex);
     }
 
-    private static int getNumberOfIntegers() {
+    private static int getSize() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number of integers in the array: ");
-        int numberOfIntegers = 0;
+        int size = 0;
         do {
-            numberOfIntegers = scanner.nextInt();
-            if (numberOfIntegers <= 0) {
+            size = scanner.nextInt();
+            if (size <= 0) {
                 System.out.println("Please enter a number greater than zero.");
             }
-        } while (numberOfIntegers <= 0);
-        return numberOfIntegers;
+        } while (size <= 0);
+        return size;
     }
 
     public static int[] createRandomArray(int count) {
@@ -51,7 +51,7 @@ public class WorkWithArrays {
         return array;
     }
 
-    public static int getSumOfNegativeNumbers(int[] array) {
+    public static int getNegativeSum(int[] array) {
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] < 0) {
@@ -61,48 +61,48 @@ public class WorkWithArrays {
         return sum;
     }
 
-    public static int countTheNumberOfEvenNumbers(int[] array) {
-        int countOfEvenNumbers = 0;
-        for (int i = 0; i < array.length - 1; i++) {
+    public static int getEvenCount(int[] array) {
+        int evenCount = 0;
+        for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 == 0) {
-                countOfEvenNumbers++;
+                evenCount++;
             }
         }
-        return countOfEvenNumbers;
+        return evenCount;
     }
 
-    public static int getTheIndexOfTheLargestElement(int[] array) {
-        int indexOfLargestElement = 0;
+    public static int getMaxIndex(int[] array) {
+        int maxIndex = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] > array[indexOfLargestElement]) {
-                indexOfLargestElement = i;
+            if (array[i] > array[maxIndex]) {
+                maxIndex = i;
             }
         }
-        return indexOfLargestElement;
+        return maxIndex;
     }
 
-    public static int getTheIndexOfTheSmallestElement(int[] array) {
-        int indexOfSmallestElement = 0;
+    public static int getMinIndex(int[] array) {
+        int minIndex = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] < array[indexOfSmallestElement]) {
-                indexOfSmallestElement = i;
+            if (array[i] < array[minIndex]) {
+                minIndex = i;
             }
         }
-        return indexOfSmallestElement;
+        return minIndex;
     }
 
-    public static int getIndexOfFirstNegative(int[] array) {
-        int indexOfFirstNegative = -1;
+    public static int getFirstNegativeIndex(int[] array) {
+        int firstNegativeIndex = -1;
         int i = 0;
 
         while (i < array.length) {
             if (array[i] < 0) {
-                indexOfFirstNegative = i;
+                firstNegativeIndex = i;
                 break;
             }
             i++;
         }
-        return indexOfFirstNegative;
+        return firstNegativeIndex;
     }
 
     public static void getAverageAfterFirstNegative(int[] array, int index) {
