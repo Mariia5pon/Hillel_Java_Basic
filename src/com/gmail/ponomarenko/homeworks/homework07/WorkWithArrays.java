@@ -20,8 +20,11 @@ public class WorkWithArrays {
 
         int indexOfTheLargestElement = getTheIndexOfTheLargestElement(arrayOfIntegers);
         int largestElement = arrayOfIntegers[indexOfTheLargestElement];
-        System.out.printf("Largest element: %d (with index %d)", largestElement, indexOfTheLargestElement);
+        System.out.printf("Largest element: %d (with index %d) \n", largestElement, indexOfTheLargestElement);
 
+        int indexOfTheSmallestElement = getTheIndexOfTheSmallestElement(arrayOfIntegers);
+        int smallestElement = arrayOfIntegers[indexOfTheSmallestElement];
+        System.out.printf("Smallest element: %d (with index %d) \n", smallestElement, indexOfTheSmallestElement);
     }
 
     private static int getNumberOfIntegers() {
@@ -47,7 +50,7 @@ public class WorkWithArrays {
 
     public static int getSumOfNegativeNumbers(int[] array) {
         int sum = 0;
-        for (int i = 0; i < array.length - 1; i++) {
+        for (int i = 0; i < array.length; i++) {
             if (array[i] < 0) {
                 sum += array[i];
             }
@@ -67,11 +70,21 @@ public class WorkWithArrays {
 
     public static int getTheIndexOfTheLargestElement(int[] array) {
         int indexOfLargestElement = 0;
-        for (int i = 0; i < array.length - 1; i++) {
+        for (int i = 0; i < array.length; i++) {
             if (array[i] > array[indexOfLargestElement]) {
                 indexOfLargestElement = i;
             }
         }
         return indexOfLargestElement;
+    }
+
+    public static int getTheIndexOfTheSmallestElement(int[] array) {
+        int indexOfSmallestElement = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < array[indexOfSmallestElement]) {
+                indexOfSmallestElement = i;
+            }
+        }
+        return indexOfSmallestElement;
     }
 }
