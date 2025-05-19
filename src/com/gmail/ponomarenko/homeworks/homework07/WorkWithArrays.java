@@ -92,17 +92,14 @@ public class WorkWithArrays {
     }
 
     public static int getFirstNegativeIndex(int[] array) {
-        int firstNegativeIndex = -1;
         int i = 0;
-
         while (i < array.length) {
             if (array[i] < 0) {
-                firstNegativeIndex = i;
                 break;
             }
             i++;
         }
-        return firstNegativeIndex;
+        return i;
     }
 
     public static void getAverageAfterFirstNegative(int[] array, int index) {
