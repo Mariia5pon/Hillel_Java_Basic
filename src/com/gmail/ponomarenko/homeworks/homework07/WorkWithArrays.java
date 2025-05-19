@@ -9,12 +9,19 @@ public class WorkWithArrays {
         int numberOfIntegers = getNumberOfIntegers();
         int[] arrayOfIntegers = createRandomArray(numberOfIntegers);
         System.out.println("Elements of the array: " + Arrays.toString(arrayOfIntegers));
+
         int sumOfNegativeNumbers = getSumOfNegativeNumbers(arrayOfIntegers);
         System.out.println("Sum of negative numbers: " + sumOfNegativeNumbers);
+
         int countOfEvenNumbers = countTheNumberOfEvenNumbers(arrayOfIntegers);
         int countOfOddNumbers = numberOfIntegers - countOfEvenNumbers;
         System.out.println("Count of even numbers: " + countOfEvenNumbers);
         System.out.println("Count of odd numbers: " + countOfOddNumbers);
+
+        int indexOfTheLargestElement = getTheIndexOfTheLargestElement(arrayOfIntegers);
+        int largestElement = arrayOfIntegers[indexOfTheLargestElement];
+        System.out.printf("Largest element: %d (with index %d)", largestElement, indexOfTheLargestElement);
+
     }
 
     private static int getNumberOfIntegers() {
@@ -56,5 +63,15 @@ public class WorkWithArrays {
             }
         }
         return countOfEvenNumbers;
+    }
+
+    public static int getTheIndexOfTheLargestElement(int[] array) {
+        int indexOfLargestElement = 0;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] > array[indexOfLargestElement]) {
+                indexOfLargestElement = i;
+            }
+        }
+        return indexOfLargestElement;
     }
 }
