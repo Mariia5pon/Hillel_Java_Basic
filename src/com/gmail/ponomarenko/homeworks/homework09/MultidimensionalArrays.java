@@ -10,7 +10,8 @@ public class MultidimensionalArrays {
         int[][] matrix = randomMatrix(rows, columns);
         print(matrix);
         evenOddRowsSums(matrix);
-        evenOddColumnsSums(matrix);
+        evenOddColumnsProduct(matrix);
+
     }
 
     public static int readInt(String string) {
@@ -25,7 +26,6 @@ public class MultidimensionalArrays {
         } while (size <= 0);
         return size;
     }
-
 
     public static int[][] randomMatrix(int rows, int columns) {
         int[][] matrix = new int[rows][columns];
@@ -63,18 +63,18 @@ public class MultidimensionalArrays {
         System.out.println("Sum of elements in odd rows: " + sumOdd);
     }
 
-    public static void evenOddColumnsSums(int[][] matrix) {
-        int sumEven = 0;
-        int sumOdd = 0;
+    public static void evenOddColumnsProduct(int[][] matrix) {
+        int productEven = 1;
+        int productOdd = 1;
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++)
                 if (j % 2 != 0) {
-                    sumEven += matrix[i][j];
+                    productEven *= matrix[i][j];
                 } else {
-                    sumOdd += matrix[i][j];
+                    productOdd *= matrix[i][j];
                 }
         }
-        System.out.println("Sum of elements in even columns: " + sumEven);
-        System.out.println("Sum of elements in odd columns: " + sumOdd);
+        System.out.println("Product of elements in even columns: " + productEven);
+        System.out.println("Product of elements in odd columns: " + productOdd);
     }
 }
