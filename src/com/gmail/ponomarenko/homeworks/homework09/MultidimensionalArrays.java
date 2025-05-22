@@ -10,6 +10,7 @@ public class MultidimensionalArrays {
         int columns = readInt("columns");
         int[][] matrix = randomMatrix(rows, columns);
         print(matrix);
+        evenOddRowsSums(matrix);
     }
 
     public static int readInt(String string) {
@@ -43,5 +44,22 @@ public class MultidimensionalArrays {
             }
             System.out.println();
         }
+    }
+
+    public static void evenOddRowsSums(int[][] matrix) {
+        int sumEven = 0;
+        int sumOdd = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            if (i % 2 != 0) {
+                for (int j = 0; j < matrix[i].length; j++)
+                    sumEven += matrix[i][j];
+            } else {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    sumOdd += matrix[i][j];
+                }
+            }
+        }
+        System.out.println("Sum of elements in even rows: " + sumEven);
+        System.out.println("Sum of elements in odd rows: " + sumOdd);
     }
 }
