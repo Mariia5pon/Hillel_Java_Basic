@@ -42,9 +42,9 @@ public class WorkWithArrays {
 
     public static int negativeSum(int[] array) {
         int sum = 0;
-        for (int j : array) {
-            if (j < 0) {
-                sum += j;
+        for (int element : array) {
+            if (element < 0) {
+                sum += element;
             }
         }
         return sum;
