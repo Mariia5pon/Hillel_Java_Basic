@@ -1,6 +1,5 @@
 package com.gmail.ponomarenko.homeworks.homework08;
 
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -10,6 +9,9 @@ public class SortAndSearchAnArray {
         int[] array = createRandomArray(size);
         System.out.printf("Elements of the array: ");
         print(array);
+        int[] sorted = insertionSort(array);
+        System.out.printf("Sorted array: ");
+        print(sorted);
     }
 
     private static int readInt() {
@@ -43,5 +45,18 @@ public class SortAndSearchAnArray {
             System.out.print(", " + element);
         }
         System.out.println("]");
+    }
+
+    public static int[] insertionSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            int temp = array[i];
+            int j = i;
+            while (j > 0 && array[j - 1] > temp) {
+                array[j] = array[j - 1];
+                j--;
+            }
+            array[j] = temp;
+        }
+        return array;
     }
 }
