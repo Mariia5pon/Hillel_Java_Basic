@@ -1,6 +1,5 @@
 package com.gmail.ponomarenko.homeworks.homework09;
 
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -11,6 +10,7 @@ public class MultidimensionalArrays {
         int[][] matrix = randomMatrix(rows, columns);
         print(matrix);
         evenOddRowsSums(matrix);
+        evenOddColumnsSums(matrix);
     }
 
     public static int readInt(String string) {
@@ -31,7 +31,7 @@ public class MultidimensionalArrays {
         int[][] matrix = new int[rows][columns];
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = ThreadLocalRandom.current().nextInt(1, 51);
+                matrix[i][j] = ThreadLocalRandom.current().nextInt(1, 5);
             }
         }
         return matrix;
@@ -61,5 +61,20 @@ public class MultidimensionalArrays {
         }
         System.out.println("Sum of elements in even rows: " + sumEven);
         System.out.println("Sum of elements in odd rows: " + sumOdd);
+    }
+
+    public static void evenOddColumnsSums(int[][] matrix) {
+        int sumEven = 0;
+        int sumOdd = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++)
+                if (j % 2 != 0) {
+                    sumEven += matrix[i][j];
+                } else {
+                    sumOdd += matrix[i][j];
+                }
+        }
+        System.out.println("Sum of elements in even columns: " + sumEven);
+        System.out.println("Sum of elements in odd columns: " + sumOdd);
     }
 }
