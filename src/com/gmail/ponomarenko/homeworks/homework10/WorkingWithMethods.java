@@ -1,5 +1,6 @@
 package com.gmail.ponomarenko.homeworks.homework10;
 
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -18,7 +19,8 @@ public class WorkingWithMethods {
         print(array);
         System.out.printf("\tThe sum of all elements of the array is %d.\n", arraySum(array));
 
-        String inputString = readString("\t4. Enter a string: ");
+        String line = readString("4. Enter a string: ");
+        System.out.printf("\tThe line is in reverse order: %s", reverseLine(line));
     }
 
     public static int readInt(String string) {
@@ -69,5 +71,15 @@ public class WorkingWithMethods {
             sum += array[i];
         }
         return sum;
+    }
+
+    public static String reverseLine(String line) {
+        char[] chars = line.toCharArray();
+        char[] reverseChars = new char[line.length()];
+        for (int i = 1; i < line.length(); i++) {
+            reverseChars[line.length() - 1 - i] = chars[i];
+        }
+        String reverseLine = new String(reverseChars);
+        return reverseLine;
     }
 }
