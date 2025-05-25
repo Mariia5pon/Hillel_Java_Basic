@@ -85,7 +85,6 @@ public class MultidimensionalArrays {
         return sum;
     }
 
-
     public static int sumForColumn(int[][] matrix, int column) {
         int sum = 0;
         for (int[] row : matrix) {
@@ -108,6 +107,34 @@ public class MultidimensionalArrays {
             sum += matrix[i][matrix.length - 1 - i];
         }
         return sum;
+    }
+
+    public static boolean magicSquare(int[][] matrix) {
+        if (matrix.length != matrix[0].length) {
+            return false;
+        }
+
+        int temp = sumForRow(matrix[0]);
+        for (int i = 1; i < matrix.length; i++) {
+            if (temp != sumForRow(matrix[i])) {
+                return false;
+            }
+        }
+
+        for (int i = 0; i < matrix[0].length; i++) {
+            if (temp != sumForColumn(matrix, i)) {
+                return false;
+            }
+        }
+
+        if (temp != sumPrimaryDiagonal(matrix)) {
+            return false;
+        }
+
+        if (temp != sumSecondaryDiagonal(matrix)) {
+            return false;
+        }
+        return true;
     }
 }
 
