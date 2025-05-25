@@ -20,7 +20,11 @@ public class WorkingWithMethods {
         System.out.printf("\tThe sum of all elements of the array is %d.\n", arraySum(array));
 
         String line = readString("4. Enter a string: ");
-        System.out.printf("\tThe line is in reverse order: %s", reverseLine(line));
+        System.out.printf("\tThe line is in reverse order: %s\n", reverseLine(line));
+
+        int base = readInt("5. Enter the number to raise to a power: ");
+        int power = readInt("\tEnter a power: ");
+        System.out.printf("%d raised to the power of %d is %f", base, power, exponentiation(base, power));
     }
 
     public static int readInt(String string) {
@@ -76,10 +80,29 @@ public class WorkingWithMethods {
     public static String reverseLine(String line) {
         char[] chars = line.toCharArray();
         char[] reverseChars = new char[line.length()];
-        for (int i = 1; i < line.length(); i++) {
+        for (int i = 0; i < line.length(); i++) {
             reverseChars[line.length() - 1 - i] = chars[i];
         }
         String reverseLine = new String(reverseChars);
         return reverseLine;
+    }
+
+    public static double exponentiation(int base, int power) {
+        double result = 1.0;
+        if (power > 1) {
+            while (power > 1) {
+                result *= base;
+                power--;
+            }
+            return result;
+        } else if (power == 0) {
+            return 1.0;
+        } else {
+            while (power < 0) {
+                result *= base;
+                power++;
+            }
+            return 1.0 / result;
+        }
     }
 }
