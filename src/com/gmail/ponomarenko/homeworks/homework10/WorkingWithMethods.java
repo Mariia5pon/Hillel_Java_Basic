@@ -12,8 +12,9 @@ public class WorkingWithMethods {
         System.out.printf("\tThe volume of a cylinder with a radius of %f and a height of %f is %f.\n", radius, height, cylinderVolume(radius, height));
         int size = readInt("3. Enter a size of the array: ");
         int[] array = randomArray(size);
-        System.out.println("\tArray of numbers: " );
+        System.out.println("\tArray of numbers: ");
         print(array);
+        System.out.printf("\tThe sum of all elements of the array is %d.\n", arraySum(array));
     }
 
     public static int readInt(String string) {
@@ -49,5 +50,13 @@ public class WorkingWithMethods {
             System.out.print(", " + element);
         }
         System.out.println("]");
+    }
+
+    public static int arraySum(int[] array) {
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        return sum;
     }
 }
