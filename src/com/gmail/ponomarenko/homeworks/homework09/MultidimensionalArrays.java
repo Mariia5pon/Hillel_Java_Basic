@@ -84,4 +84,13 @@ public class MultidimensionalArrays {
         }
         return sum;
     }
+
+
+    public static int sumForColumn(int[][] matrix, int column) {
+        int sum = 0;
+        for (int[] row : matrix) {
+            sum += row[column];
+        }
+        return sum;
+    }
 }
