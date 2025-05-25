@@ -11,6 +11,11 @@ public class MultidimensionalArrays {
         print(matrix);
         evenOddRowsSums(matrix);
         evenOddColumnsProduct(matrix);
+        if (magicSquare(matrix)) {
+            System.out.println("A matrix is a magic square.");
+        } else {
+            System.out.println("A matrix is not a magic square.");
+        }
     }
 
     public static int readInt(String string) {
@@ -48,14 +53,14 @@ public class MultidimensionalArrays {
     public static void evenOddRowsSums(int[][] matrix) {
         int sumEven = 0;
         int sumOdd = 0;
+
         for (int i = 0; i < matrix.length; i++) {
-            if (i % 2 != 0) {
-                for (int j = 0; j < matrix[i].length; j++)
-                    sumEven += matrix[i][j];
+            int rowSum = sumForRow(matrix[i]);
+
+            if (i % 2 == 0) {
+                sumEven += rowSum;
             } else {
-                for (int j = 0; j < matrix[i].length; j++) {
-                    sumOdd += matrix[i][j];
-                }
+                sumOdd += rowSum;
             }
         }
         System.out.println("Sum of elements in even rows: " + sumEven);
