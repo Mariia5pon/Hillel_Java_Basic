@@ -1,6 +1,7 @@
 package com.gmail.ponomarenko.homeworks.homework10;
 
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class WorkingWithMethods {
     public static void main(String[] args) {
@@ -9,6 +10,8 @@ public class WorkingWithMethods {
         double radius = readInt("2. Enter the radius of the cylinder: ");
         double height = readInt("\tEnter the height of the cylinder: ");
         System.out.printf("\tThe volume of a cylinder with a radius of %f and a height of %f is %f.", radius, height, cylinderVolume(radius, height));
+        int size = readInt("3. Enter a size of the array: ");
+        int[] array = randomArray(size);
     }
 
     public static int readInt(String string) {
@@ -24,5 +27,13 @@ public class WorkingWithMethods {
 
     public static double cylinderVolume(double radius, double height) {
         return 3.14 * radius * radius * height;
+    }
+
+    public static int[] randomArray(int size) {
+        int[] array = new int[size];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = ThreadLocalRandom.current().nextInt(1, 101);
+        }
+        return array;
     }
 }
