@@ -11,7 +11,6 @@ public class MultidimensionalArrays {
         print(matrix);
         evenOddRowsSums(matrix);
         evenOddColumnsProduct(matrix);
-
     }
 
     public static int readInt(String string) {
@@ -76,5 +75,13 @@ public class MultidimensionalArrays {
         }
         System.out.println("Product of elements in even columns: " + productEven);
         System.out.println("Product of elements in odd columns: " + productOdd);
+    }
+
+    public static int sumForRow(int[] row) {
+        int sum = 0;
+        for (int cell : row) {
+            sum += cell;
+        }
+        return sum;
     }
 }
