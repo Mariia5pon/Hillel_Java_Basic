@@ -9,9 +9,11 @@ public class WorkingWithMethods {
         System.out.printf("\tThe square of %d is %d.\n", number, square(number));
         double radius = readInt("2. Enter the radius of the cylinder: ");
         double height = readInt("\tEnter the height of the cylinder: ");
-        System.out.printf("\tThe volume of a cylinder with a radius of %f and a height of %f is %f.", radius, height, cylinderVolume(radius, height));
+        System.out.printf("\tThe volume of a cylinder with a radius of %f and a height of %f is %f.\n", radius, height, cylinderVolume(radius, height));
         int size = readInt("3. Enter a size of the array: ");
         int[] array = randomArray(size);
+        System.out.println("\tArray of numbers: " );
+        print(array);
     }
 
     public static int readInt(String string) {
@@ -35,5 +37,17 @@ public class WorkingWithMethods {
             array[i] = ThreadLocalRandom.current().nextInt(1, 101);
         }
         return array;
+    }
+
+    private static void print(int[] array) {
+        System.out.print("\t[");
+        if (array.length > 0) {
+            System.out.print(array[0]);
+        }
+        for (int i = 1; i < array.length; i++) {
+            int element = array[i];
+            System.out.print(", " + element);
+        }
+        System.out.println("]");
     }
 }
