@@ -114,24 +114,24 @@ public class MultidimensionalArrays {
             return false;
         }
 
-        int temp = sumForRow(matrix[0]);
+        int sample = sumForRow(matrix[0]);
         for (int i = 1; i < matrix.length; i++) {
-            if (temp != sumForRow(matrix[i])) {
+            if (sample != sumForRow(matrix[i])) {
                 return false;
             }
         }
 
         for (int i = 0; i < matrix[0].length; i++) {
-            if (temp != sumForColumn(matrix, i)) {
+            if (sample != sumForColumn(matrix, i)) {
                 return false;
             }
         }
 
-        if (temp != sumPrimaryDiagonal(matrix)) {
+        if (sample != sumPrimaryDiagonal(matrix)) {
             return false;
         }
 
-        if (temp != sumSecondaryDiagonal(matrix)) {
+        if (sample != sumSecondaryDiagonal(matrix)) {
             return false;
         }
         return true;
