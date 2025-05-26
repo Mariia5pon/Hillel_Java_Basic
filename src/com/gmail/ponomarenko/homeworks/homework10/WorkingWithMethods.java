@@ -50,7 +50,7 @@ public class WorkingWithMethods {
     }
 
     public static double cylinderVolume(double radius, double height) {
-        return 3.14 * radius * radius * height;
+        return Math.PI * radius * radius * height;
     }
 
     public static int[] randomArray(int size) {
