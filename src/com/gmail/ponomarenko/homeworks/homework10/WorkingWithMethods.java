@@ -83,12 +83,11 @@ public class WorkingWithMethods {
 
     public static String reverseLine(String line) {
         char[] chars = line.toCharArray();
-        char[] reverseChars = new char[line.length()];
+        char[] reversedChars = new char[line.length()];
         for (int i = 0; i < line.length(); i++) {
-            reverseChars[line.length() - 1 - i] = chars[i];
+            reversedChars[line.length() - 1 - i] = chars[i];
         }
-        String reverseLine = new String(reverseChars);
-        return reverseLine;
+        return new String(reversedChars);
     }
 
     public static double exponentiation(int base, int power) {
