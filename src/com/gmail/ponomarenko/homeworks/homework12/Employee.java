@@ -4,10 +4,10 @@ public class Employee {
     private String fullName;
     private String position;
     private String email;
-    private int phone;
+    private String phone;
     private int age;
 
-    public Employee(String fullName, String position, String email, int phone, int age) {
+    public Employee(String fullName, String position, String email, String phone, int age) {
         this.fullName = fullName;
         this.position = position;
         this.email = email;
@@ -39,11 +39,11 @@ public class Employee {
         this.email = email;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
