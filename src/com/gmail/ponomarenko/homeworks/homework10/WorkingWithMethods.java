@@ -92,19 +92,15 @@ public class WorkingWithMethods {
 
     public static double exponentiation(int base, int power) {
         double result = 1.0;
-        if (power > 1) {
-            while (power > 0) {
-                result *= base;
-                power--;
-            }
+        int absolutePower = Math.abs(power);
+
+        for (int i = 0; i < absolutePower; i++) {
+            result *= base;
+        }
+
+        if (power >= 0) {
             return result;
-        } else if (power == 0) {
-            return 1.0;
         } else {
-            while (power < 0) {
-                result *= base;
-                power++;
-            }
             return 1.0 / result;
         }
     }
