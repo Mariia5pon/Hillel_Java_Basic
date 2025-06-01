@@ -19,4 +19,24 @@ public class Car {
     private void startFuelSystem() {
         System.out.println("3. Fuel system activated");
     }
+
+    public void stop() {
+        stopFuelSystem();
+        stopCommand();
+        stopElectricity();
+        System.out.println("Car stopped!");
+    }
+
+    private void stopFuelSystem() {
+        System.out.println("3. Fuel system shut down");
+    }
+
+    private void stopCommand() {
+        System.out.println("2. Command terminated");
+    }
+
+    private void stopElectricity() {
+        System.out.println("1. Electricity off");
+    }
+
 }
